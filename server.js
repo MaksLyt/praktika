@@ -1,4 +1,4 @@
-// server.js
+
 import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 app.get('/exercise-image/:id', async (req, res) => {
   const exerciseId = req.params.id;
-  const resolution = '180'; // або 360 якщо доступно
+  const resolution = '180'; 
 
   try {
     const response = await axios.get(
@@ -23,7 +23,7 @@ app.get('/exercise-image/:id', async (req, res) => {
           'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
           'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY
         },
-        responseType: 'arraybuffer' // важливо, щоб отримати GIF
+        responseType: 'arraybuffer' 
       }
     );
 
